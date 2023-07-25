@@ -1,6 +1,5 @@
 "use client"; // Error components must be Client Components
 
-import Toast from "@/src/components/toast";
 import { useEffect } from "react";
 
 export default function Error({
@@ -15,12 +14,17 @@ export default function Error({
     console.error(error);
   }, [error]);
 
-  console.log("asdsa");
-
   return (
     <div>
-      <h1>ERROR</h1>
-      <p>{error.message}</p>
+      <h2>Something went wrong!</h2>
+      <button
+        onClick={
+          // Attempt to recover by trying to re-render the segment
+          () => reset()
+        }
+      >
+        Try again
+      </button>
     </div>
   );
 }

@@ -5,8 +5,7 @@ import { absoluteUrl } from "../lib/utils";
 export const runtime = "edge";
 
 type GetHousesOptions = {
-  page?: string;
-  pageLimit?: string;
+  pageSize?: string;
   hasTitles?: string;
   hasDiedOut?: string;
   hasSeats?: string;
@@ -14,4 +13,8 @@ type GetHousesOptions = {
 
 export async function getHouses(opts: GetHousesOptions = {}) {
   return get<Array<House>>(absoluteUrl("/api/houses"), opts);
+}
+
+export async function getHouse(id: string) {
+  return get<House>(absoluteUrl(`/api/houses/${id}`));
 }

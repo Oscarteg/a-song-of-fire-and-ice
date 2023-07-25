@@ -1,7 +1,7 @@
-import Toast from "@/src/components/toast";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Toast />
-
-        {children}
+    <html lang="en" className="text-gray-900 bg-gray-100 font-serif">
+      <body
+        className={cn(
+          inter.className,
+          "flex min-h-screen flex-col items-center justify-between p-24 text-white",
+        )}
+      >
+        <main>{children}</main>
       </body>
     </html>
   );

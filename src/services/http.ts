@@ -3,11 +3,12 @@ import { generateUrl } from "../lib/utils";
 
 export async function get<T>(
   url: string,
-  params?: Record<string, string>,
+  params?: Record<string, string> | URLSearchParams,
   options: RequestInit = {},
 ) {
   try {
     const updatedUrl = generateUrl(url, params);
+    console.log({ updatedUrl });
     const response = await fetch(updatedUrl, options);
 
     if (!response.ok) {

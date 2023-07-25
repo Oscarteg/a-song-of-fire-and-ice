@@ -6,13 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\""
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.6.0",
-    "@types/node": "20.4.4",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "clsx": "^2.0.0",
     "eslint": "8.45.0",
@@ -21,10 +19,16 @@
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sonner": "^0.6.2",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
     "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/node": "20.4.4",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "cypress": "^12.17.2",
+    "start-server-and-test": "^2.0.0"
   }
 }
