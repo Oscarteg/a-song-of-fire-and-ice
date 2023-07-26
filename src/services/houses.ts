@@ -1,6 +1,6 @@
-import { House } from "@/app/models";
 import { get } from "./http";
 import { absoluteUrl } from "../lib/utils";
+import { House } from "@/models";
 
 export const runtime = "edge";
 

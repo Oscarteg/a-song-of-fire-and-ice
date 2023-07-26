@@ -9,9 +9,6 @@ type GetHousesActionInput = {
   hasSeats?: string;
 };
 
-export async function getHousesAction({
-  pageSize = "100",
-  ...input
-}: GetHousesActionInput) {
-  return getHouses({ ...input, pageSize });
+export async function getHousesAction(input: GetHousesActionInput) {
+  return getHouses(input);
 }

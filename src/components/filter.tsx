@@ -14,7 +14,7 @@ export default function Filter() {
   const hasTitles = searchParams?.get("hasTitles") ?? null;
   const hasDiedOut = searchParams?.get("hasDiedOut") ?? null;
   const hasSeats = searchParams?.get("hasSeats") ?? null;
-  const pageSize = searchParams?.get("pageSize") ?? 25;
+  const pageSize = searchParams?.get("pageSize") ?? 10;
 
   // Create query string
   const createQueryString = useCallback(
@@ -43,7 +43,7 @@ export default function Filter() {
   return (
     <fieldset>
       <legend className="sr-only">Filter</legend>
-      <div className="flex space-y-5">
+      <div className="flex items-center gap-4">
         <div className="relative flex items-start">
           <input
             id="has-titles"
@@ -97,7 +97,7 @@ export default function Filter() {
           </div>
         </div>
 
-        <div className="relative flex items-start">
+        <div className="flex items-start">
           <div className="flex h-6 items-center">
             <input
               id="has-seats"
@@ -125,9 +125,15 @@ export default function Filter() {
           </div>
         </div>
 
-        <div className="relative flex items-start">
-          <label htmlFor="pageSize">Page size:</label>
+        <div className="flex items-center gap-2">
+          <label
+            htmlFor="pageSize"
+            className="block text-sm font-medium leading-6 text-gray-900 whitespace-nowrap"
+          >
+            Page size:
+          </label>
           <select
+            className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
             name="pageSize"
             value={pageSize}
             disabled={isPending}
@@ -141,6 +147,7 @@ export default function Filter() {
               });
             }}
           >
+            <option value="10">10</option>
             <option value="25">25</option>
             <option value="50">50</option>
             <option value="100">100</option>
