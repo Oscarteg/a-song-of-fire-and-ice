@@ -28,18 +28,18 @@ export default async function Houses({
       <ul
         data-testid="houses"
         role="list"
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr"
+        className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-auto"
       >
         {houses?.map((house) => {
           const id = getPathFromURL(house.url).pop();
           return (
-            <li key={id} className="col-span-1">
+            <li key={id} className="col-span-1 h-full">
               <Link
                 href={`/houses/${id}`}
                 key={id}
-                className="flex flex-1 flex-col divide-y divide-gray-200 text-center"
+                className="flex flex-1 flex-col divide-y divide-gray-200 text-center h-full "
               >
-                <Card>
+                <Card className="h-full">
                   <CardHeader>
                     <CardTitle>{house.name}</CardTitle>
                     <CardDescription>{house.region}</CardDescription>
