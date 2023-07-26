@@ -1,5 +1,5 @@
-import clsx, { ClassValue } from "clsx";
 import { env } from "@/env.mjs";
+import clsx, { ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -12,12 +12,11 @@ export function absoluteUrl(path: string) {
 
 export function generateUrl(
   url: string,
-  params?: Record<string, string> | URLSearchParams,
+  params?: Record<string, string> | URLSearchParams
 ) {
   if (!params) return url.replace("?", "").trim();
 
   // Check if the URL already contains query parameters
-
   const hasQueryParams = url.includes("?");
 
   const queryParams = new URLSearchParams(params).toString();

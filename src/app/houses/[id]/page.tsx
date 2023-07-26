@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               </div>
             </div>
             <ul className="divide-y divide-gray-100">
-              {members?.map(({ name, aliases, ...member }: Character) => (
+              {members?.map(({ name, aliases }: Character) => (
                 <li
                   key={name}
                   className="flex items-center justify-between gap-x-6 py-5"
