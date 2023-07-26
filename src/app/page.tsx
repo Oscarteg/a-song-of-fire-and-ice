@@ -23,8 +23,10 @@ export default async function Houses({
 
   return (
     <div className="flex flex-col gap-2">
+      <h1 className="text-5xl font-semibold">Houses</h1>
       <Filter />
       <ul
+        data-testid="houses"
         role="list"
         className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-fr"
       >
